@@ -19,8 +19,8 @@ const gameServer = new Server({
 });
 
 // register your room handlers
-gameServer.define('default_room', GameRoom);
-gameServer.define('room2', GameRoom);
+gameServer.define('cabin', GameRoom);
+gameServer.define('outside', GameRoom);
 
 /**
  * Register @colyseus/social routes

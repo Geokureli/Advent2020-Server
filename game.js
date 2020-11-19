@@ -115,10 +115,11 @@ Object.assign(GState.prototype, {
 	__class__: GState
 });
 class AvatarState {
-	constructor(id,x,y) {
+	constructor(id,x,y,state) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
+		this.state = state;
 	}
 }
 AvatarState.__name__ = true;
