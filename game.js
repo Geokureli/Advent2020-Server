@@ -15,8 +15,11 @@ class Game {
 			if(data.y != null) {
 				avatar.y = data.y;
 			}
-			if(data.color != null) {
-				avatar.color = data.color;
+			if(data.name != null) {
+				avatar.name = data.name;
+			}
+			if(data.skin != null) {
+				avatar.skin = data.skin;
 			}
 			if(data.state != null) {
 				avatar.state = data.state;
@@ -1349,21 +1352,24 @@ class schema_Avatar extends io_colyseus_serializer_schema_Schema {
 	}
 	_hx_constructor() {
 		this.state = 0;
-		this.color = 0;
+		this.skin = 0;
 		this.y = 0;
 		this.x = 0;
+		this.name = "";
 		this.id = "";
 		super._hx_constructor();
 		this._indexes.h[0] = "id";
 		this._types.h[0] = "string";
-		this._indexes.h[1] = "x";
-		this._types.h[1] = "number";
-		this._indexes.h[2] = "y";
+		this._indexes.h[1] = "name";
+		this._types.h[1] = "string";
+		this._indexes.h[2] = "x";
 		this._types.h[2] = "number";
-		this._indexes.h[3] = "color";
+		this._indexes.h[3] = "y";
 		this._types.h[3] = "number";
-		this._indexes.h[4] = "state";
+		this._indexes.h[4] = "skin";
 		this._types.h[4] = "uint8";
+		this._indexes.h[5] = "state";
+		this._types.h[5] = "uint8";
 	}
 }
 schema_Avatar.__name__ = true;

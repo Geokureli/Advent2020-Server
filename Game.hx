@@ -19,7 +19,8 @@ class Game
             {
                 if (data.x     != null) avatar.x     = data.x;
                 if (data.y     != null) avatar.y     = data.y;
-                if (data.color != null) avatar.color = data.color;
+                if (data.name  != null) avatar.name  = data.name;
+                if (data.skin  != null) avatar.skin  = data.skin;
                 if (data.state != null) avatar.state = data.state;
             }
         }

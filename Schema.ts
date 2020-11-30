@@ -13,14 +13,17 @@ export class Avatar extends Schema
     @type("string")
     id: string;
     
+    @type("string")
+    name: string;
+    
     @type("number")
     x: number;
     
     @type("number")
     y: number;
     
-    @type("number")
-    color: number;
+    @type("uint8")
+    skin: number;
     
     @type("uint8")
     state: number;
