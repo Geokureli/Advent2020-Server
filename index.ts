@@ -19,7 +19,8 @@ const gameServer = new Server({
 });
 
 // register your room handlers
-gameServer.define('cabin', GameRoom);
+gameServer.define('hallway', GameRoom);
+gameServer.define('entrance', GameRoom);
 gameServer.define('outside', GameRoom);
 
 /**
