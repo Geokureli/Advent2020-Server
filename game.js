@@ -24,6 +24,11 @@ class Game {
 			if(data.state != null) {
 				avatar.state = data.state;
 			}
+			if(data.emote != null) {
+				avatar.emote = data.emote;
+			} else {
+				avatar.emote = 0;
+			}
 		}
 	}
 	init() {
@@ -118,10 +123,12 @@ Object.assign(GState.prototype, {
 	__class__: GState
 });
 class AvatarState {
-	constructor(id,x,y,state) {
+	constructor(id,x,y,skin,emote,state) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
+		this.skin = skin;
+		this.emote = emote;
 		this.state = state;
 	}
 }
@@ -1351,6 +1358,7 @@ class schema_Avatar extends io_colyseus_serializer_schema_Schema {
 		this._hx_constructor();
 	}
 	_hx_constructor() {
+		this.emote = 0;
 		this.state = 0;
 		this.skin = 0;
 		this.y = 0;
@@ -1370,6 +1378,8 @@ class schema_Avatar extends io_colyseus_serializer_schema_Schema {
 		this._types.h[4] = "uint8";
 		this._indexes.h[5] = "state";
 		this._types.h[5] = "uint8";
+		this._indexes.h[6] = "emote";
+		this._types.h[6] = "uint8";
 	}
 }
 schema_Avatar.__name__ = true;

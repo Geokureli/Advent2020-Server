@@ -22,6 +22,10 @@ class Game
                 if (data.name  != null) avatar.name  = data.name;
                 if (data.skin  != null) avatar.skin  = data.skin;
                 if (data.state != null) avatar.state = data.state;
+                if (data.emote != null)
+                    avatar.emote = data.emote;
+                else
+                    avatar.emote = 0;
             }
         }
     }

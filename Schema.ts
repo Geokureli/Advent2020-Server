@@ -27,6 +27,9 @@ export class Avatar extends Schema
     
     @type("uint8")
     state: number;
+    
+    @type("uint8")
+    emote: number;
 }
 
 export class GameState extends Schema

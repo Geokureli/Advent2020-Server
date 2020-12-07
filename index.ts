@@ -22,6 +22,8 @@ const gameServer = new Server({
 gameServer.define('hallway', GameRoom);
 gameServer.define('entrance', GameRoom);
 gameServer.define('outside', GameRoom);
+gameServer.define('arcade', GameRoom);
+gameServer.define('music', GameRoom);
 
 /**
  * Register @colyseus/social routes
