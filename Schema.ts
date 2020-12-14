@@ -68,3 +68,14 @@ export class GameState extends Schema
         return point;
     }
 }
+
+export class VenueGameState extends GameState
+{    
+    @type({ map: "number" })
+    songs = new ArraySchema<number>();
+    
+    addSong(id:number)
+    {
+        this.songs.push(id);
+    }
+}

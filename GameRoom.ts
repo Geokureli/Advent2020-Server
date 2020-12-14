@@ -1,6 +1,7 @@
 import { Room, Client } from "colyseus";
 
 import { GameState } from './Schema';
+import { VenueGameState } from './Schema';
 import { Game } from './game';
 
 export class GameRoom extends Room
@@ -39,15 +40,34 @@ export class GameRoom extends Room
     }
     
     onDispose() {}
+}
+
+
+export class VenueGameRoom extends GameRoom
+{
+    // maxClients = 6;
+    game = new Game();
+    
+    onCreate (options:any)
+    {
+        this.setState(new VenueGameState());
+        
+        const w = this.state.world;
+        
+        // this.setSimulationInterval((dt) => this.update(dt));
+    }
+    
+    
+    onMessage (client:Client, message:any)
+    {
+        super.onMessage(client, message);
+    }
+    
+    onDispose() {}
     
     // update(elapsed:number)
     // {
     //     let dt = elapsed/1000;
     //     this.game.update(dt, this.state);
-    // }
-    
-    // broadcastPatch()
-    // {
-    //     return super.broadcastPatch();
     // }
 }

@@ -6,6 +6,7 @@ import { monitor } from "@colyseus/monitor";
 // import socialRoutes from "@colyseus/social/express"
 
 import { GameRoom } from "./GameRoom";
+import { VenueGameRoom } from "./GameRoom";
 
 const port = Number(process.env.PORT || 2567);
 const app = express()
@@ -24,6 +25,7 @@ gameServer.define('entrance', GameRoom);
 gameServer.define('outside', GameRoom);
 gameServer.define('arcade', GameRoom);
 gameServer.define('music', GameRoom);
+gameServer.define('venue', VenueGameRoom);
 
 /**
  * Register @colyseus/social routes
