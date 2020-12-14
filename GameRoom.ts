@@ -24,8 +24,13 @@ export class GameRoom extends Room
     
     onMessage (client:Client, message:any)
     {
-        const avatar = this.state.avatars[client.id];
-        this.game.processMessage(message.type, message.data, avatar, this.state);
+        if (message.type == "meta")
+            this.setMetadata(message.data);
+        else
+        {
+            const avatar = this.state.avatars[client.id];
+            this.game.processMessage(message.type, message.data, avatar, this.state);
+        }
     }
     
     onLeave (client:Client, consented:boolean)
