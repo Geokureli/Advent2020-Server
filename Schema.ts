@@ -69,10 +69,13 @@ export class GameState extends Schema
     }
 }
 
-export class VenueGameState extends GameState
-{    
+export class DanceGameState extends GameState
+{
     @type({ map: "number" })
     songs = new ArraySchema<number>();
+    
+    @type("number")
+    songStartTime:number;
     
     addSong(id:number)
     {
