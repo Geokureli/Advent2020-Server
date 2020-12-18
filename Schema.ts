@@ -77,8 +77,16 @@ export class DanceGameState extends GameState
     @type("number")
     songStartTime:number;
     
+    @type("number")
+    songLength:number;
+    
     addSong(id:number)
     {
         this.songs.push(id);
+    }
+    
+    setCurrentSongLength(length:number)
+    {
+        this.songLength = length;
     }
 }
