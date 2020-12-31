@@ -15,7 +15,7 @@ export class GameRoom extends Room
         
         const w = this.state.world;
         
-        this.setSimulationInterval((dt)=>this.update(dt));
+        // this.setSimulationInterval((dt)=>this.update(dt));
     }
     
     onJoin (client:Client, options:any)
@@ -54,7 +54,7 @@ export class DanceGameRoom extends GameRoom
         
         const w = this.state.world;
         
-        this.setSimulationInterval((dt) => this.update(dt));
+        // this.setSimulationInterval((dt) => this.update(dt));
     }
     
     
