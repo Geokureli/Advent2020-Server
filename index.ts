@@ -26,6 +26,7 @@ gameServer.define('outside', GameRoom);
 gameServer.define('arcade', GameRoom);
 gameServer.define('music', GameRoom);
 gameServer.define('dance', DanceGameRoom);
+gameServer.define('movie', GameRoom);
 
 /**
  * Register @colyseus/social routes
