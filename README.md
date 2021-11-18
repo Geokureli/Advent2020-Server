@@ -4,9 +4,9 @@ which was copied from [`@AustinEast/bass-master-online`](https://github.com/Aust
 
 ## Haxelibs
 
-zerolib: `0.8.0`
-colyseus: `0.14.9`
-colyseus-websocket: `1.0.10`
+* zerolib: `0.8.0`
+* colyseus: `0.14.9`
+* colyseus-websocket: `1.0.10`
 
 ## Austin's Server code
 
