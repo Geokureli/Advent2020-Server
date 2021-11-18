@@ -15,17 +15,17 @@ export class GameRoom extends Room
         const w = this.state.world;
         
         // this.setSimulationInterval((dt) => this.update(dt));
+        
+        this.onMessage("avatar", (client, message) => {
+            
+            const avatar = this.state.avatars[client.id];
+            this.game.processAvatarMessage(message, avatar, this.state);
+        });
     }
     
     onJoin (client:Client, options:any)
     {
         this.state.createAvatar(client.id, 0);
-    }
-    
-    onMessage (client:Client, message:any)
-    {
-        const avatar = this.state.avatars[client.id];
-        this.game.processMessage(message.type, message.data, avatar, this.state);
     }
     
     onLeave (client:Client, consented:boolean)

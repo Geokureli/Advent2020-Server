@@ -40,21 +40,21 @@ export class GameState extends Schema
     createAvatar (id: string)
     {
         let avatar = new Avatar();
-        this.avatars[id] = avatar;
+        this.avatars.set(id, avatar);
         
         return avatar;
     }
     
     removeAvatar (id: string)
     {
-        delete this.avatars[id];
+        this.avatars.delete(id);
     }
     
     forEachAvatar(callback:(entity:Avatar) => any)
     {
         for (let id in this.avatars)
         {
-            const avatar: Avatar = this.avatars[id];
+            const avatar: Avatar = this.avatars.get(id);
             if (avatar != null)
                 callback(avatar);
         }
